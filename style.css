@@ -1,0 +1,390 @@
+body {
+    background-color: rgb(180, 5, 5);
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    padding-top: 5rem; /* leave space for fixed header */
+    text-align: center;
+}
+
+/* Hamburger menu button */
+.hamburger {
+    position: fixed;
+    top: 0.8rem;
+    right: 1.2rem;
+    z-index: 1001;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: blanchedalmond;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(8px, 8px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+    position: fixed;
+    top: 3.5rem;
+    left: 0;
+    right: 0;
+    background: transparent;
+    border-bottom: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    max-height: 300px;
+    background: rgba(192, 6, 6, 0.95);
+    border-bottom: 2px solid blanchedalmond;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 1rem 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.mobile-menu a {
+    color: blanchedalmond;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    display: block;
+    padding: 0.7rem 1.5rem;
+    transition: background 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:focus {
+    background: rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+
+
+/* Fixed header at top */
+body h1 {
+    position: fixed;
+    top: 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    color: blanchedalmond;
+    font-size: 2.5em;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2.5px solid blanchedalmond;
+    background: rgba(198, 0, 0, 0.9);
+    margin: 0;
+    padding: 0.35rem 0.8rem;
+    display: block;
+}
+
+body p {
+    color: blanchedalmond;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1rem 0;
+    width: min(900px, 95%);
+}
+
+/* Intro paragraph styling (optional override) */
+.intro {
+    max-width: 900px;
+    line-height: 1.6;
+}
+
+/* Button-like links */
+.buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.1rem;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-weight: 600;
+}
+.btn:hover,
+.btn:focus {
+    background: #0056b3;
+    outline: none;
+}
+.btn:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Header 2 styling */
+body h2 {
+    color: blanchedalmond;
+    font-size: 2.15em;
+    font-family: 'Courier New', Courier, monospace;
+    margin-top: 2rem;
+    border-bottom: 2px solid blanchedalmond;
+    display: block;
+    padding: 0.35rem 0.8rem;
+    background: transparent;
+}
+body img{
+    max-width: 100%;
+    height: auto;
+    border: 2px solid blanchedalmond;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* Left-aligned variant for wider screens */
+.photo.left {
+  align-self: flex-start; /* works with body flex-column layout */
+  margin: 1rem 1.5rem 1rem 0; /* space to the right for text */
+  max-width: 600px;
+}
+
+@media (max-width: 600px) {
+  .photo.left {
+    align-self: center; /* center on small screens */
+    margin: 1rem auto;
+  }
+}
+
+/* Right-aligned variant for images */
+.photo.right {
+  align-self: flex-end; /* align to the right */
+  margin: 1rem 0 1rem 1.5rem; /* space to the left for text */
+  max-width: 650px;
+}
+
+@media (max-width: 600px) {
+  .photo.right {
+    align-self: center; /* center on small screens */
+    margin: 1rem auto;
+  }
+}
+
+/* Photo container for grouping images */
+.photo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ============================================ */
+/* RESPONSIVE DESIGN FOR ALL DEVICES */
+/* ============================================ */
+
+/* Extra small phones (< 360px) */
+@media (max-width: 360px) {
+  body {
+    padding: 0.75rem;
+    padding-top: 4.5rem;
+  }
+
+  body h1 {
+    font-size: 1.8em;
+    padding: 0.25rem 0.5rem;
+  }
+
+  body p {
+    font-size: 0.95rem;
+    width: 98%;
+  }
+
+  .buttons {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  body h2 {
+    font-size: 1.4em;
+  }
+
+  .mobile-menu {
+    top: 3rem;
+  }
+}
+
+/* Small phones (360px - 480px) */
+@media (min-width: 360px) and (max-width: 480px) {
+  body {
+    padding: 0.75rem;
+    padding-top: 4.75rem;
+  }
+
+  body h1 {
+    font-size: 2em;
+    padding: 0.3rem 0.6rem;
+  }
+
+  body p {
+    font-size: 1rem;
+    width: 95%;
+  }
+
+  .buttons {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  body h2 {
+    font-size: 1.5em;
+    margin-top: 1.5rem;
+  }
+
+  .mobile-menu a {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablets / Large mobile (480px - 768px) */
+@media (min-width: 480px) and (max-width: 768px) {
+  body {
+    padding: 1rem;
+    padding-top: 5rem;
+  }
+
+  body h1 {
+    font-size: 2.2em;
+  }
+
+  body p {
+    font-size: 1.08rem;
+  }
+
+  .buttons {
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.65rem 1rem;
+  }
+
+  body h2 {
+    font-size: 1.8em;
+  }
+}
+
+/* Small tablets (768px - 1024px) */
+@media (min-width: 768px) {
+  body h1 {
+    font-size: 2.4em;
+  }
+
+  body p {
+    font-size: 1.15rem;
+  }
+
+  body h2 {
+    font-size: 2em;
+  }
+
+  .photo.left,
+  .photo.right {
+    max-width: 500px;
+  }
+}
+
+/* Large tablets / Desktops (1024px+) */
+@media (min-width: 1024px) {
+  body {
+    padding: 1.5rem;
+    padding-top: 6rem;
+  }
+
+  body h1 {
+    font-size: 2.6em;
+  }
+
+  body p {
+    font-size: 1.2rem;
+  }
+
+  body h2 {
+    font-size: 2.2em;
+  }
+
+  .buttons {
+    gap: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .photo.left,
+  .photo.right {
+    max-width: 600px;
+  }
+}
+
+/* Accessibility: Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Accessibility: High contrast mode */
+@media (prefers-contrast: more) {
+  body h1,
+  body h2,
+  body p,
+  .nav-link,
+  .mobile-menu a,
+  .btn {
+    font-weight: 700;
+  }
+}
