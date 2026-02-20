@@ -26,57 +26,156 @@
             </ul>
         </nav>
 
-        <p class="intro">
-            Hi, my name is Henry Mann and back in 2024 I created my North Jersey Fire
-            Buffs Youtube account. Later in 2025, I created my TikTok account which
-            has been growing rapidly averaging 3+ followers per day. In February of
-            2026, I decided to create an Instagram account to boost my following.
-            Creating North Jersey Fire Buffs has allowed me to express my love for
-            firefighters and photography and share it with the public. On my social
-            accounts, I post videos of emergency vehicles responding, operating on
-            scenes, returning from calls and I photograph & film fire scenes. Below,
-            you can find the links to my Youtube, TikTok & Instagram accounts. On the
-            other pages, you can find my photography work and my contact
-            information.
-        </p>
+        <!-- HOME SECTION -->
+        <section id="home" class="section">
+            <p class="intro">
+                Hi, my name is Henry Mann and back in 2024 I created my North Jersey Fire
+                Buffs Youtube account. Later in 2025, I created my TikTok account which
+                has been growing rapidly averaging 3+ followers per day. In February of
+                2026, I decided to create an Instagram account to boost my following.
+                Creating North Jersey Fire Buffs has allowed me to express my love for
+                firefighters and photography and share it with the public. On my social
+                accounts, I post videos of emergency vehicles responding, operating on
+                scenes, returning from calls and I photograph & film fire scenes. Below,
+                you can find the links to my Youtube, TikTok & Instagram accounts. On the
+                other pages, you can find my photography work and my contact
+                information.
+            </p>
 
-        <div class="buttons" aria-label="Social links">
-            <a
-                href="https://youtube.com/@northjerseyfirebuffs?si=sEAkJp1vMrV9ciA2"
-                class="btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="YouTube channel (opens in new tab)"
-            >
-                YouTube
-            </a>
-            <a
-                href="https://www.tiktok.com/@north.jersey.fire.buffs?is_from_webapp=1&sender_device=pc"
-                class="btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="TikTok profile (opens in new tab)"
-            >
-                TikTok
-            </a>
-            <a
-                href="https://www.instagram.com/"
-                class="btn"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram profile (opens in new tab)"
-            >
-                Instagram
-            </a>
-        </div>
+            <div class="buttons" aria-label="Social links">
+                <a
+                    href="https://youtube.com/@northjerseyfirebuffs?si=sEAkJp1vMrV9ciA2"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube channel (opens in new tab)"
+                >
+                    YouTube
+                </a>
+                <a
+                    href="https://www.tiktok.com/@north.jersey.fire.buffs?is_from_webapp=1&sender_device=pc"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="TikTok profile (opens in new tab)"
+                >
+                    TikTok
+                </a>
+                <a
+                    href="https://www.instagram.com/"
+                    class="btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram profile (opens in new tab)"
+                >
+                    Instagram
+                </a>
+            </div>
+        </section>
 
-        <h2>Photography</h2>
+        <!-- PHOTOGRAPHY SECTION -->
+        <section id="photography" class="section">
+            <h2>Photography</h2>
+            <p class="section-intro">Explore my latest fire scene photography and emergency vehicle captures.</p>
+            <div class="photo-container">
+                <img src="image.png" alt="Photography sample" class="photo left" />
+                <img src="image copy.png" alt="Photography sample copy" class="photo right" />
+                <img src="image copy 2.png" alt="Photography sample 2" class="photo left" />
+            </div>
+        </section>
 
-        <div class="photo-container">
-          <img src="image.png" alt="Photography sample" class="photo left" />
-          <img src="image copy.png" alt="Photography sample copy" class="photo right" />
-          <img src="image copy 2.png" alt="Photography sample 2" class="photo left" />
-        </div>
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <h2>About</h2>
+            <p>
+                I'm passionate about capturing the heroic moments of first responders and the beauty of emergency operations. 
+                With a focus on high-quality photography and videography, I showcase the dedication and courage of our local firefighters 
+                and emergency services. My work has gained traction across multiple platforms, and I'm committed to bringing more awareness 
+                to the incredible work these heroes do every day.
+            </p>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <h2>Contact & Inquiry Form</h2>
+            <p>Have a question or want to collaborate? Fill out the form below and I'll get back to you soon!</p>
+            
+            <form id="contact-form" class="contact-form" aria-label="Contact form">
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        placeholder="Your Name"
+                        aria-required="true"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        placeholder="your.email@example.com"
+                        aria-required="true"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone (Optional)</label>
+                    <input 
+                        type="tel" 
+                        id="phone" 
+                        name="phone" 
+                        placeholder="(555) 123-4567"
+                    />
+                </div>
+
+                <div class="form-group">
+                    <label for="inquiry-type">Type of Inquiry *</label>
+                    <select id="inquiry-type" name="inquiry-type" required aria-required="true">
+                        <option value="">-- Select an option --</option>
+                        <option value="collaboration">Photography Collaboration</option>
+                        <option value="licensing">Image Licensing</option>
+                        <option value="featured">Feature Request</option>
+                        <option value="sponsorship">Sponsorship</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        required 
+                        placeholder="Tell me more about your inquiry..."
+                        rows="6"
+                        aria-required="true"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget" class="checkbox-label">
+                        <input type="checkbox" id="budget" name="budget" />
+                        This is a paid opportunity
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn-submit">Send Message</button>
+                <div id="form-message" class="form-message" aria-live="polite"></div>
+            </form>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <p>&copy; 2026 North Jersey Fire Buffs. All rights reserved.</p>
+            <p>Documenting heroes | Capturing moments | Sharing passion</p>
+        </footer>
 
         <script src="Henry.js"></script>
     </body>
