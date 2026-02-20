@@ -1,14 +1,23 @@
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
 body {
-    background-color: rgb(180, 5, 5);
+    background: linear-gradient(135deg, rgb(180, 5, 5) 0%, rgb(150, 4, 4) 100%);
     margin: 0;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 1rem;
     padding-top: 5rem; /* leave space for fixed header */
     text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Hamburger menu button */
@@ -23,7 +32,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 0.5rem;
+    padding: 0.75rem;
+    min-width: 48px;
+    min-height: 48px;
+    justify-content: center;
+    align-items: center;
 }
 
 .hamburger span {
@@ -44,6 +57,15 @@ body {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Improve touch/focus states for accessibility */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch device styles */
+    .btn:active,
+    .mobile-menu a:active {
+        opacity: 0.8;
+    }
 }
 
 /* Mobile menu */
@@ -80,9 +102,12 @@ body {
     text-decoration: none;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 600;
-    display: block;
-    padding: 0.7rem 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
     transition: background 0.3s ease;
+    min-height: 48px;
+    font-size: 1.05rem;
 }
 
 .mobile-menu a:hover,
@@ -133,23 +158,177 @@ body p {
     justify-content: center;
     margin-top: 1.5rem;
 }
+
 .btn {
-    display: inline-block;
-    padding: 0.7rem 1.1rem;
-    background: #007bff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    background: rgb(180, 5, 5);
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 2px solid blanchedalmond;
     font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace;
+    min-height: 44px;
+    font-size: 1rem;
 }
+
 .btn:hover,
 .btn:focus {
-    background: #0056b3;
+    background: rgb(200, 10, 10);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
     outline: none;
 }
 .btn:focus {
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 3px rgba(180, 5, 5, 0.25);
+}
+
+/* Section styling */
+.section {
+    width: 100%;
+    max-width: 1000px;
+    padding: 1.5rem 1rem;
+    margin: 1rem 0;
+    scroll-margin-top: 100px;
+}
+
+.section-intro {
+    color: blanchedalmond;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: -1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid blanchedalmond;
+    max-width: 600px;
+    margin: 2rem auto;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: blanchedalmond;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid blanchedalmond;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    line-height: 1.5;
+    min-height: 44px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: rgb(180, 5, 5);
+    box-shadow: 0 0 8px rgba(180, 5, 5, 0.3);
+    background: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #999;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    color: blanchedalmond !important;
+    cursor: pointer;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.checkbox-label input {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.75rem;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-message {
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 6px;
+    display: none;
+    color: blanchedalmond;
+    font-weight: 600;
+}
+
+.form-message.success {
+    display: block;
+    background: rgba(34, 139, 34, 0.3);
+    border: 2px solid #22a522;
+    color: #fff;
+}
+
+.form-message.error {
+    display: block;
+    background: rgba(255, 0, 0, 0.3);
+    border: 2px solid #ff6666;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: blanchedalmond;
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 2px solid blanchedalmond;
+}
+
+.footer p {
+    margin: 0.5rem 0;
 }
 
 /* Header 2 styling */
@@ -219,31 +398,50 @@ body img{
   }
 
   body h1 {
-    font-size: 1.8em;
-    padding: 0.25rem 0.5rem;
+    font-size: 1.6em;
+    padding: 0.35rem 0.5rem;
   }
 
   body p {
     font-size: 0.95rem;
     width: 98%;
+    line-height: 1.7;
   }
 
   .buttons {
     gap: 0.5rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
   }
 
   .btn {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+    font-size: 0.95rem;
+    flex: 1 1 calc(50% - 0.25rem);
+    min-width: 120px;
   }
 
   body h2 {
     font-size: 1.4em;
+    padding: 0.5rem 0.5rem;
   }
 
   .mobile-menu {
     top: 3rem;
+  }
+
+  .contact-form {
+    padding: 1rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  .section {
+    padding: 1.5rem 0.5rem;
   }
 }
 
@@ -255,13 +453,14 @@ body img{
   }
 
   body h1 {
-    font-size: 2em;
-    padding: 0.3rem 0.6rem;
+    font-size: 1.9em;
+    padding: 0.35rem 0.6rem;
   }
 
   body p {
     font-size: 1rem;
     width: 95%;
+    line-height: 1.7;
   }
 
   .buttons {
@@ -271,18 +470,45 @@ body img{
   }
 
   .btn {
-    padding: 0.6rem 0.9rem;
+    padding: 0.8rem 1.1rem;
     font-size: 0.95rem;
+    flex: 1 1 calc(50% - 0.375rem);
+    min-width: 130px;
   }
 
   body h2 {
-    font-size: 1.5em;
+    font-size: 1.6em;
     margin-top: 1.5rem;
+    padding: 0.5rem;
   }
 
   .mobile-menu a {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+    padding: 1rem 1.2rem;
+    font-size: 1rem;
+  }
+
+  .contact-form {
+    padding: 1.25rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.75rem;
+  }
+
+  .form-group label {
+    font-size: 1.05rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 1.5rem 0.75rem;
   }
 }
 
@@ -295,22 +521,43 @@ body img{
 
   body h1 {
     font-size: 2.2em;
+    padding: 0.4rem 0.8rem;
   }
 
   body p {
     font-size: 1.08rem;
+    line-height: 1.7;
   }
 
   .buttons {
     gap: 1rem;
+    flex-wrap: wrap;
   }
 
   .btn {
-    padding: 0.65rem 1rem;
+    padding: 0.85rem 1.15rem;
+    font-size: 1rem;
+    min-height: 48px;
   }
 
   body h2 {
     font-size: 1.8em;
+    padding: 0.5rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  .section {
+    padding: 2rem 1.5rem;
   }
 }
 
